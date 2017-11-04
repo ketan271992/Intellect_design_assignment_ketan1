@@ -1,0 +1,11 @@
+<div *ngIf="showToDo">
+
+	<div class="panel panel-primary">
+              <div class="panel-heading">TO DO List</div>
+              <ul class="panel-body fixed-panel" *ngFor="let todo of todoList">
+                <li><span *ngIf="todo.completed; else elseBlock"><p><del>{{todo.title}}</del></p></span></li>
+                <li><ng-template #elseBlock>{{todo.title}}</ng-template></li>
+              </ul>
+            </div>
+            <input type="text" placeholder="Add New ToDo">
+</div>
